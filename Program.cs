@@ -7,8 +7,8 @@ namespace MyApp
     {
         static void Main(string[] args)
         {
-            Pizza pizza = new PizzaBuilder().SetSize("Large").AddCheese().AddPepperoni().AddOlives().Build();
-            pizza.Display();
+            Logger log1 = Logger.GetInstance();
+            Logger log2 = Logger.GetInstance();
         }
     }
 }
