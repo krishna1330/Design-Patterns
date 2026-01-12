@@ -7,10 +7,8 @@ namespace MyApp
     {
         static void Main(string[] args)
         {
-            string paymentType = "Stripe";
-            PaymentFactory paymentFactory = new PaymentFactory();
-            IPayment payment = paymentFactory.CreatePayment(paymentType);
-            payment.ProcessPayment(100);
+            Pizza pizza = new PizzaBuilder().SetSize("Large").AddCheese().AddPepperoni().AddOlives().Build();
+            pizza.Display();
         }
     }
 }
