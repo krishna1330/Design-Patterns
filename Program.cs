@@ -7,39 +7,18 @@ namespace MyApp
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Choose your cuisine: Indian or Chinese");
-            string cuisine = "Indian";
-
-            if (cuisine == "Chinese")
+            Invitation masterInvitation = new Invitation()
             {
-                ChineseSoup soup = new ChineseSoup();
-                ChineseMainCourse mainCourse = new ChineseMainCourse();
-                ChineseDesert desert = new ChineseDesert();
+                Name = "JP",
+                Description = "Marriage",
+                Venue = "Vizag"
+            };
 
-                soup.Serve();
-                mainCourse.Serve();
-                desert.Serve();
-            }
+            Invitation invitation1 = masterInvitation.Clone();
+            invitation1.Name = "Sravan";
 
-            else if (cuisine == "Indian")
-            {
-                IndianSoup soup = new IndianSoup();
-                IndianMainCourse mainCourse = new IndianMainCourse();
-                IndianDesert desert = new IndianDesert();
-
-                soup.Serve(); 
-                mainCourse.Serve(); 
-                desert.Serve();
-            }
-
-
-            ChineseSoup soup2 = new ChineseSoup();
-            IndianMainCourse main2 = new IndianMainCourse();  // WRONG!
-            ChineseDesert dessert2 = new ChineseDesert();
-
-            soup2.Serve();
-            main2.Serve();
-            dessert2.Serve();
+            Invitation invitation2 = masterInvitation.Clone();
+            invitation2.Name = "Satya";
         }
     }
 }
